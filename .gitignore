@@ -1,2 +1,7 @@
 .agent
+
+# Python & PDM
 .venv
+**/__pycache__
+.pdm-python
+.pdm-build
