@@ -1,0 +1,14 @@
+{
+  "data": [
+    {
+      "id": "v1",
+      "type": "vehicle",
+      "attributes": {
+        "updated_at": "2025-01-01T12:00:00-05:00",
+        "latitude": 42.35,
+        "longitude": -71.06
+      },
+      "relationships": { "route": { "data": { "id": "Red", "type": "route" } } }
+    }
+  ]
+}

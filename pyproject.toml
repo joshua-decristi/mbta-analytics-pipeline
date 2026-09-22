@@ -2,7 +2,7 @@
   name = "mbta-analytics-pipeline"
   version = "0.1.0"
   requires-python = ">=3.14,<3.15"
-  dependencies = ["duckdb", "pyarrow"]
+  dependencies = ["duckdb", "pyarrow", "requests"]
 
   [build-system]
   requires = ["pdm-backend"]
