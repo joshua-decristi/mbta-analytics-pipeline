@@ -1,6 +1,16 @@
 from sqlite3 import Cursor
+from typing import TypedDict
 
 VEHICLE_OBSERVATIONS_TABLE_NAME = "vehicle_observations"
+
+
+class VehicleObservationRecord(TypedDict):
+    snapshot_id: str
+    vehicle_id: str
+    route_id: str
+    latitude: float
+    longitude: float
+    observed_at: str
 
 
 # Create Vehicle Observations table

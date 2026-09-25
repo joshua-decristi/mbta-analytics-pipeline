@@ -2,12 +2,12 @@ from sqlite3 import Connection
 from sqlite3 import Error as SQLiteError
 from typing import TypedDict
 
-VEHICLE_OBSERVATIONS_TABLE_NAME = "vehicle_observations"
+from ..schema import VEHICLE_OBSERVATIONS_TABLE_NAME
 
 type VehicleObservationRecord = list[tuple[str, str, str, float, float, str]]
 
 
-class VehicleObservationsSnapshot(TypedDict):
+class VehicleObservationsSnapshotRecord(TypedDict):
     vehicle_id: str
     route_id: str
     latitude: float
@@ -15,11 +15,16 @@ class VehicleObservationsSnapshot(TypedDict):
     observed_at: str
 
 
+class VehicleObservationsSnapshot(TypedDict):
+    snapshot_id: str
+    records: list[VehicleObservationsSnapshotRecord]
+
+
 # Load Vehicle Observations from snapshot
 def load_vehicle_response_snapshot(
     connection: Connection,
     snapshot_id: str,
-    observations: list[VehicleObservationsSnapshot],
+    observations: list[VehicleObservationsSnapshotRecord],
 ):
     print(f'Inserting snapshot: "{snapshot_id}" into SQLite')
     cursor = connection.cursor()

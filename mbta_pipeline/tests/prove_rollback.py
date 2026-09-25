@@ -1,7 +1,7 @@
 from sqlite3 import Connection
 from sqlite3 import IntegrityError as SQLiteIntegrityError
 
-from ..schema import create_connection, create_schema
+from ..schema import VEHICLE_OBSERVATIONS_TABLE_NAME, create_connection, create_schema
 from ..snapshots import load_snapshot
 
 SNAPSHOT = {
@@ -33,13 +33,11 @@ SNAPSHOT = {
 
 
 def get_table_count(connection: Connection):
-    TABLE_NAME = "vehicle_observations"
-
     cursor = connection.cursor()
-    cursor.execute(f"SELECT COUNT(*) FROM {TABLE_NAME}")
+    cursor.execute(f"SELECT COUNT(*) FROM {VEHICLE_OBSERVATIONS_TABLE_NAME}")
     (count,) = cursor.fetchall()[0]
 
-    print(f"The total count for {TABLE_NAME} = {count}")
+    print(f"The total count for {VEHICLE_OBSERVATIONS_TABLE_NAME} = {count}")
 
 
 def main():

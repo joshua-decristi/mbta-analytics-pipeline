@@ -1,5 +1,8 @@
 .agent
 
+# Local SQLite File
+data/operational/*.db
+
 # Python & PDM
 .venv
 **/__pycache__
