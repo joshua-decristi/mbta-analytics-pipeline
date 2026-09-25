@@ -4,23 +4,23 @@
     {
       "vehicle_id": 0,
       "route_id": 0,
-      "observed_at": "2024-12-29T12:00:00Z",
       "latitude": 42.36228,
-      "longitude": -71.08701
+      "longitude": -71.08701,
+      "observed_at": "2024-12-29T12:00:00Z"
     },
     {
       "vehicle_id": 1,
       "route_id": 1,
-      "observed_at": "2024-12-30T12:00:00Z",
       "latitude": 42.3503,
-      "longitude": -71.0450
+      "longitude": -71.0450,
+      "observed_at": "2024-12-30T12:00:00Z"
     },
     {
       "vehicle_id": 2,
       "route_id": 2,
-      "observed_at": "2024-12-31T12:00:00Z",
       "latitude": 42.3615,
-      "longitude": -71.0813
+      "longitude": -71.0813,
+      "observed_at": "2024-12-31T12:00:00Z"
     }
   ]
 }
