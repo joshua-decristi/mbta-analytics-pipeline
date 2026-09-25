@@ -28,3 +28,13 @@ MBTA_URL_RESPONSE_FIXTURES_FILE = "data/fixtures/raw/vehicles-response.json"
 2. Key: composite(`snapshot_id`, `vehicle_id`)
 3. SQLite advantage: SQLite is a transactional DB & built to handle transactional load (ingesting & normalized data will be more performant)
 4. Analytical limitation: SQLite is a transactional DB, it's not built for large analitical operations (analysis will be slow)
+
+---
+
+## Storage Roles
+
+| Technology | Layout/artifact                                                 | Mutability                                               | Workload                              |
+| ---------- | --------------------------------------------------------------- | -------------------------------------------------------- | ------------------------------------- |
+| SQLite     | 1 file/memory, btree, row-based storage, OLTP                   | Mutable: INSERT, UPDATE, DELETE                          | transactional                         |
+| DuckDB     | 1 file/memory/load from other files, column-based storage, OLAP | Mutable database tables; external files remain unchanged | analytical queries and aggregations   |
+| Parquet    | portable columnar file with row groups and metadata             | Immutable; rewrite/replace the file                      | analytical scans and data interchange |
