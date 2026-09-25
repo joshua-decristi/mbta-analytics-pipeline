@@ -1,7 +1,8 @@
 .agent
 
-# Local SQLite File
+# Local Operations
 data/operational/*.db
+data/landing/*
 
 # Python & PDM
 .venv
