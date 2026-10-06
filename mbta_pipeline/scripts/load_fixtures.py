@@ -2,6 +2,7 @@ import json
 from sqlite3 import Connection
 from sqlite3 import IntegrityError as SQLiteIntegrityError
 
+from ..pipelines import export_vehicle_observations
 from ..schema import VEHICLE_OBSERVATIONS_TABLE_NAME, create_connection, create_schema
 from ..snapshots import VehicleObservationsSnapshot, load_snapshot
 
@@ -34,6 +35,7 @@ def main():
     print("Loading temporary snapshot")
     try:
         load_snapshot(connection, snapshot["snapshot_id"], snapshot["records"])
+        export_vehicle_observations(connection)
 
     except SQLiteIntegrityError as error:
         print(f"Caught expected error: {error}")

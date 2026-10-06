@@ -39,7 +39,7 @@ def _write_table(table, parquet_location: str):
     pq.write_table(table, parquet_location, compression="zstd")
 
 
-def load_vehicle_observations(connection: Connection):
+def export_vehicle_observations(connection: Connection):
     # Fetch vehicles from OLTP
     vehicle_observations = _fetch_vehicle_observations(connection)
 
