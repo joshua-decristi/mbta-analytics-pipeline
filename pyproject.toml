@@ -13,3 +13,4 @@
 
   [tool.pdm.scripts]
   trace-batch = "python -m mbta_pipeline.scripts.trace_batch"
+  load-fixtures = "python -m mbta_pipeline.scripts.load_fixtures"
