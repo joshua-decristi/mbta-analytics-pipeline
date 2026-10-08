@@ -12,4 +12,4 @@
   distribution = true
 
   [tool.pdm.scripts]
-  trace-batch = "python -m mbta_pipeline.trace_batch"
+  trace-batch = "python -m mbta_pipeline.scripts.trace_batch"
